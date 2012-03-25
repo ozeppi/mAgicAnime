@@ -1,0 +1,302 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{236A610C-9446-4987-9468-856A60E79B5B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>magicAnime</RootNamespace>
+    <AssemblyName>mAgicAnime</AssemblyName>
+    <ApplicationIcon>mAgicAnime.ico</ApplicationIcon>
+    <StartupObject>magicAnime.Program</StartupObject>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin.Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin.Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>1591 0168 1587</NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BatchManager.cs" />
+    <Compile Include="PathHelper.cs" />
+    <Compile Include="DateTimeHelper.cs" />
+    <Compile Include="MakeThumbnail.cs" />
+    <Compile Include="UserInterface\StationTableDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\StationTableDialog.Designer.cs">
+      <DependentUpon>StationTableDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingHelper\ExternalToolsSetting.cs" />
+    <Compile Include="OnLine DataBase\SyoboiRecordFilter.cs" />
+    <Compile Include="UnmanageHelper.cs" />
+    <Compile Include="User32API.cs" />
+    <Compile Include="RecordingManager\AnimeSort.cs" />
+    <Compile Include="RecordingManager\EncodeManager\CmdLineEncoder\CmdLineEncoderPlugin.cs" />
+    <Compile Include="RecordingManager\EncodeManager\CmdLineEncoder\CmdLineProfileDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecordingManager\EncodeManager\CmdLineEncoder\CmdLineProfileDlg.Designer.cs">
+      <DependentUpon>CmdLineProfileDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecordingManager\EncodeManager\CmdLineEncoder\cmdLineProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecordingManager\EncodeManager\CmdLineEncoder\cmdLineProperty.Designer.cs">
+      <DependentUpon>cmdLineProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecordingManager\AnimeServer.cs">
+    </Compile>
+    <Compile Include="UserInterface\AnimeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\AnimeDialog.Designer.cs">
+      <DependentUpon>AnimeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecordingManager\AnimeProgram.cs" />
+    <Compile Include="RecordingManager\AnimeEpisode.cs" />
+    <Compile Include="RecordingManager\EncodeManager\BatchEncoder.cs" />
+    <Compile Include="UserInterface\CalenderOptionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\CalenderOptionDialog.Designer.cs">
+      <DependentUpon>CalenderOptionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecordingManager\EncodeManager\EncodeManager.cs" />
+    <Compile Include="RecordingManager\EncodeManager\Encoder.cs" />
+    <Compile Include="KernelAPI.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="RecordingManager\ReserveManager.cs" />
+    <Compile Include="RecordingManager\BootManager\BootManager.cs" />
+    <Compile Include="Schedulers\iEPGScheduler.cs" />
+    <Compile Include="UserInterface\DummyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\DummyForm.Designer.cs">
+      <DependentUpon>DummyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\OptionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\OptionDialog.Designer.cs">
+      <DependentUpon>OptionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="RecordingManager\EncodeManager\CmdLineEncoder\CmdLineProfileDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CmdLineProfileDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecordingManager\EncodeManager\CmdLineEncoder\cmdLineProperty.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>cmdLineProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\StationTableDialog.resx">
+      <DependentUpon>StationTableDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\AboutBox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\AnimeDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AnimeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\CalenderOptionDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CalenderOptionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\DummyForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DummyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\OptionDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OptionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\EpisodeDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EpisodeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\SortDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SortDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\syoboiListDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>syoboiListDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\TransferDialog.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TransferDialog.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UserInterface\EpisodeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\EpisodeDialog.Designer.cs">
+      <DependentUpon>EpisodeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Schedulers\Scheduler.cs">
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="OnLine DataBase\SyoboiCalender.cs" />
+    <Compile Include="UserInterface\SortDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\SortDialog.Designer.cs">
+      <DependentUpon>SortDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\syoboiListDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\syoboiListDlg.Designer.cs">
+      <DependentUpon>syoboiListDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\TransferDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\TransferDialog.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransferDialog.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\TrayIcon.cs" />
+    <Compile Include="VersionHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mAgicAnime.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
